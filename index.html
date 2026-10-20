@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Energia Fotovoltaica – Ultra Slide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<style>
+:root{--c:#22d3ee;--v:#8b5cf6;--b:#3b82f6;--y:#fbbf24}
+body{background:#050811;font-family:Inter,sans-serif}
+.reveal{font-family:Inter,sans-serif;color:#e2e8f0;font-size:26px}
+.reveal h1,.reveal h2,.reveal h3{font-family:Outfit,sans-serif;text-transform:none;color:#fff;margin:0;text-shadow:0 6px 30px rgba(34,211,238,.35)}
+.reveal h2{font-size:1.7em;font-weight:800;margin-bottom:.5em;text-align:left}
+.reveal .slides section{text-align:left}
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;background:#050811}
+.bg i{position:absolute;border-radius:50%;filter:blur(110px);opacity:.45;animation:dr 14s ease-in-out infinite alternate}
+.bg i:nth-child(1){width:520px;height:520px;background:var(--c);top:-150px;left:-120px}
+.bg i:nth-child(2){width:600px;height:600px;background:var(--v);bottom:-220px;right:-150px;animation-delay:-5s}
+.bg i:nth-child(3){width:380px;height:380px;background:var(--b);top:35%;left:45%;opacity:.25;animation-delay:-9s}
+@keyframes dr{to{transform:translate(70px,50px) scale(1.15)}}
+.g{background:rgba(255,255,255,.055);backdrop-filter:blur(14px);border:1px solid rgba(34,211,238,.28);border-radius:20px;padding:20px 24px;box-shadow:0 20px 50px rgba(0,0,0,.55),0 0 28px rgba(139,92,246,.22),inset 0 0 20px rgba(255,255,255,.03)}
+.tag{font-family:Outfit;letter-spacing:.3em;font-size:.55em;color:var(--c);text-transform:uppercase;margin-bottom:.6em}
+.grad{background:linear-gradient(90deg,var(--c),var(--v),var(--y));-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none}
+.fl{animation:fl 5s ease-in-out infinite;filter:drop-shadow(0 25px 30px rgba(34,211,238,.45))}
+.fl2{animation-delay:-2.5s}
+@keyframes fl{50%{transform:translateY(-22px) rotate(2deg)}}
+.row{display:flex;gap:28px;align-items:center}.row>.c{flex:1}
+.grid{display:grid;gap:18px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.ic{font-size:1.9em;background:linear-gradient(135deg,var(--c),var(--v));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 10px rgba(34,211,238,.7))}
+.reveal p,.reveal li{margin:.25em 0;line-height:1.35}.sm{font-size:.72em;color:#cbd5e1}.xs{font-size:.6em;color:#94a3b8}
+.big{font-family:Outfit;font-weight:800;font-size:2.4em;line-height:1}
+.hov{transition:.3s;cursor:pointer}.hov:hover{transform:translateY(-8px) scale(1.04);border-color:var(--v);box-shadow:0 25px 60px rgba(139,92,246,.45)}
+table{width:100%;border-collapse:collapse;font-size:.68em}th{color:var(--c);font-family:Outfit;text-align:left;padding:10px;border-bottom:2px solid var(--v)}td{padding:10px;border-bottom:1px solid rgba(255,255,255,.1)}
+.tl{position:relative;display:flex;justify-content:space-between;margin-top:70px}.tl:before{content:"";position:absolute;top:14px;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--c),var(--v),var(--y));box-shadow:0 0 14px var(--c)}
+.tl div{width:15%;font-size:.58em;position:relative;padding-top:34px}.tl div:before{content:"";position:absolute;top:6px;left:0;width:18px;height:18px;border-radius:50%;background:#050811;border:3px solid var(--c);box-shadow:0 0 14px var(--c)}
+.tl b{display:block;font-family:Outfit;font-size:1.5em;color:var(--y)}
+.scene{perspective:900px;width:300px;height:300px;margin:auto}
+.cube{width:170px;height:170px;margin:65px auto;position:relative;transform-style:preserve-3d;animation:rot 14s linear infinite;transition:transform .15s}
+.cube span{position:absolute;inset:0;border:2px solid var(--c);background:linear-gradient(135deg,rgba(34,211,238,.25),rgba(139,92,246,.25));box-shadow:0 0 30px rgba(34,211,238,.6),inset 0 0 30px rgba(139,92,246,.5);display:grid;place-items:center;font-size:56px;color:#fff;backdrop-filter:blur(3px)}
+.cube span:nth-child(1){transform:translateZ(85px)}.cube span:nth-child(2){transform:rotateY(180deg) translateZ(85px)}.cube span:nth-child(3){transform:rotateY(90deg) translateZ(85px)}.cube span:nth-child(4){transform:rotateY(-90deg) translateZ(85px)}.cube span:nth-child(5){transform:rotateX(90deg) translateZ(85px)}.cube span:nth-child(6){transform:rotateX(-90deg) translateZ(85px)}
+@keyframes rot{to{transform:rotateX(360deg) rotateY(360deg)}}
+.sun{width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,#fff6c4,#fbbf24 55%,#f97316);box-shadow:0 0 80px #fbbf24,0 0 160px rgba(249,115,22,.6);margin:auto}
+input[type=range]{width:100%;accent-color:var(--c)}
+.btn{display:inline-block;padding:12px 28px;border-radius:999px;background:linear-gradient(90deg,var(--c),var(--v));color:#050811;font-family:Outfit;font-weight:700;box-shadow:0 0 30px rgba(34,211,238,.6);cursor:pointer}
+.ring{animation:pu 2.2s infinite}@keyframes pu{0%{box-shadow:0 0 0 0 rgba(34,211,238,.6)}100%{box-shadow:0 0 0 40px rgba(34,211,238,0)}}
+</style>
+</head>
+<body>
+<div class="bg"><i></i><i></i><i></i></div>
+<div class="reveal"><div class="slides">
+
+<!-- 1 CAPA -->
+<section>
+ <div class="row">
+  <div class="c">
+   <div class="tag">Física · Energia Solar</div>
+   <h1 style="font-size:2.7em;line-height:1.05">Energia <span class="grad">Fotovoltaica</span></h1>
+   <p class="fragment sm" style="margin-top:.8em">Como transformar luz do Sol em eletricidade</p>
+   <div class="g fragment" style="margin-top:20px;font-size:.62em">
+    <p><i class="fa-solid fa-users" style="color:var(--c)"></i> <b>Arthur Ribeiro · Ana Clara · Alex Barcelos · Isabela Cristina · Laura Veloso</b></p>
+    <p><i class="fa-solid fa-graduation-cap" style="color:var(--v)"></i> Turma: <b>3 reg. 1</b></p>
+   </div>
+  </div>
+  <div class="c fragment fade-left" id="sc">
+   <div class="scene fl"><div class="cube" id="cube"><span><i class="fa-solid fa-sun"></i></span><span><i class="fa-solid fa-bolt"></i></span><span><i class="fa-solid fa-solar-panel"></i></span><span><i class="fa-solid fa-atom"></i></span><span><i class="fa-solid fa-lightbulb"></i></span><span><i class="fa-solid fa-leaf"></i></span></div></div>
+  </div>
+ </div>
+</section>
+
+<!-- 2 AGENDA -->
+<section>
+ <div class="tag">Roteiro · 20 minutos</div><h2>Agenda</h2>
+ <div class="grid g3">
+  <div class="g fragment hov"><i class="ic fa-solid fa-circle-question"></i><h3>1 · Gancho</h3><p class="sm">Por que o Sol?</p></div>
+  <div class="g fragment hov"><i class="ic fa-solid fa-atom"></i><h3>2 · Física</h3><p class="sm">Cenário, números e conceitos</p></div>
+  <div class="g fragment hov"><i class="ic fa-solid fa-table-columns"></i><h3>3 · Tecnologia</h3><p class="sm">Tipos, história, caso real, desafios</p></div>
+  <div class="g fragment hov"><i class="ic fa-solid fa-rocket"></i><h3>4 · Futuro</h3><p class="sm">Tendências e dicas</p></div>
+  <div class="g fragment hov"><i class="ic fa-solid fa-calculator"></i><h3>5 · Calcule!</h3><p class="sm">Simulador interativo</p></div>
+  <div class="g fragment hov"><i class="ic fa-solid fa-comments"></i><h3>6 · Q&amp;A</h3><p class="sm">Suas perguntas</p></div>
+ </div>
+</section>
+
+<!-- 3 GANCHO -->
+<section>
+ <div class="row">
+  <div class="c">
+   <div class="tag">O Gancho</div>
+   <h2>E se <span class="grad">1 hora de Sol</span> bastasse?</h2>
+   <p class="g fragment">A energia solar que atinge a Terra em <b>1 hora</b> supera o que a humanidade consome em <b>1 ano</b>.</p>
+   <p class="fragment sm">Problema: queimar combustíveis fósseis emite CO₂ e esgota recursos. Como captar essa energia limpa?</p>
+  </div>
+  <div class="c fragment zoom-in"><div class="sun fl"></div><p class="xs" style="text-align:center;margin-top:30px">Constante solar ≈ 1361 W/m² (fora da atmosfera)</p></div>
+ </div>
+</section>
+
+<!-- 4 CENÁRIO -->
+<section>
+ <div class="tag">Cenário Atual</div><h2>Solar no mundo e no Brasil</h2>
+ <div class="grid g2">
+  <div class="g fragment hov"><i class="ic fa-solid fa-earth-americas"></i><h3>Crescimento global</h3><p class="sm">A solar é hoje uma das fontes que mais cresce no planeta, impulsionada pela queda de custos dos módulos.</p></div>
+  <div class="g fragment hov"><i class="ic fa-solid fa-house-chimney"></i><h3>Geração distribuída</h3><p class="sm">Telhados residenciais e comerciais geram a própria energia e injetam o excedente na rede.</p></div>
+  <div class="g fragment hov"><i class="ic fa-solid fa-sun"></i><h3>Brasil ensolarado</h3><p class="sm">Alta irradiação em quase todo o território: ótimo potencial, especialmente no Nordeste.</p></div>
+  <div class="g fragment hov"><i class="ic fa-solid fa-industry"></i><h3>Grandes usinas</h3><p class="sm">Parques solares com centenas de MW já operam no país.</p></div>
+ </div>
+ <p class="xs fragment">Clique/passe o mouse nos cards. Consulte dados atualizados em ANEEL, EPE e IEA.</p>
+</section>
+
+<!-- 5 MÉTRICAS -->
+<section>
+ <div class="tag">Métricas-chave</div><h2>Números que importam</h2>
+ <div class="grid g4" style="text-align:center">
+  <div class="g fragment"><div class="big grad">1000</div><p class="sm">W/m² · irradiância padrão de teste (STC)</p></div>
+  <div class="g fragment"><div class="big grad">~22%</div><p class="sm">eficiência de módulos comerciais atuais</p></div>
+  <div class="g fragment"><div class="big grad">25+</div><p class="sm">anos de vida útil típica</p></div>
+  <div class="g fragment"><div class="big grad">0</div><p class="sm">emissões de CO₂ durante a operação</p></div>
+ </div>
+ <p class="sm fragment" style="margin-top:30px;text-align:center"><i class="fa-solid fa-solar-panel fl" style="font-size:3em;color:var(--c);display:inline-block"></i></p>
+</section>
+
+<!-- 6 CONCEITOS 1 -->
+<section>
+ <div class="tag">Conceitos · Parte 1</div><h2>O efeito fotovoltaico</h2>
+ <div class="row">
+  <div class="c">
+   <div class="g fragment"><b>1.</b> Fótons de energia <b>E = h·f</b> atingem o semicondutor (silício).</div>
+   <div class="g fragment" style="margin-top:14px"><b>2.</b> Se E ≥ energia do <i>gap</i>, o fóton libera um elétron e cria uma <b>lacuna</b>.</div>
+   <div class="g fragment" style="margin-top:14px"><b>3.</b> Na <b>junção P-N</b>, o campo elétrico separa as cargas → <b>corrente elétrica</b>.</div>
+  </div>
+  <div class="c fragment fade-left" style="text-align:center"><i class="fa-solid fa-atom fl" style="font-size:9em;color:var(--v)"></i><p class="xs">Becquerel (1839) · Einstein explica o efeito fotoelétrico (1905)</p></div>
+ </div>
+</section>
+
+<!-- 7 CONCEITOS 2 -->
+<section>
+ <div class="tag">Conceitos · Parte 2</div><h2>Da célula ao sistema</h2>
+ <div class="row" style="text-align:center">
+  <div class="g c fragment"><i class="ic fa-solid fa-square"></i><h3>Célula</h3><p class="sm">≈ 0,6 V cada</p></div>
+  <i class="fa-solid fa-arrow-right fragment" style="color:var(--c)"></i>
+  <div class="g c fragment"><i class="ic fa-solid fa-table-cells"></i><h3>Módulo</h3><p class="sm">60–72 células em série</p></div>
+  <i class="fa-solid fa-arrow-right fragment" style="color:var(--c)"></i>
+  <div class="g c fragment"><i class="ic fa-solid fa-plug-circle-bolt"></i><h3>Sistema</h3><p class="sm">Módulos + inversor (CC→CA)</p></div>
+ </div>
+ <div class="g fragment" style="margin-top:26px;text-align:center;font-size:1.1em"><b class="grad">P = U · i</b> &nbsp;|&nbsp; <b class="grad">η = P<sub>elétrica</sub> / (G · A)</b> &nbsp;|&nbsp; <b class="grad">E = P · t</b></div>
+ <p class="xs fragment">G = irradiância (W/m²) · A = área (m²) · η = eficiência</p>
+</section>
+
+<!-- 8 TABELA -->
+<section>
+ <div class="tag">Comparativo</div><h2>Tipos de células solares</h2>
+ <div class="g fragment">
+ <table>
+  <tr><th>Tipo</th><th>Eficiência (aprox.)</th><th>Custo</th><th>Característica</th></tr>
+  <tr><td><b>Monocristalino</b></td><td>20–23%</td><td>Médio/alto</td><td>Mais eficiente, ocupa menos área</td></tr>
+  <tr><td><b>Policristalino</b></td><td>15–18%</td><td>Médio</td><td>Mais barato, menos eficiente</td></tr>
+  <tr><td><b>Filme fino</b></td><td>10–13%</td><td>Baixo</td><td>Flexível e leve</td></tr>
+  <tr><td><b>Perovskita (pesquisa)</b></td><td>25%+ (em tandem)</td><td>—</td><td>Promissora; ainda sendo testada em durabilidade</td></tr>
+ </table></div>
+ <p class="xs fragment">Valores aproximados, variam por fabricante.</p>
+</section>
+
+<!-- 9 TIMELINE -->
+<section>
+ <div class="tag">Linha do tempo</div><h2>Uma história de 180 anos</h2>
+ <div class="tl">
+  <div class="fragment"><b>1839</b>Becquerel observa o efeito fotovoltaico</div>
+  <div class="fragment"><b>1905</b>Einstein explica o efeito fotoelétrico</div>
+  <div class="fragment"><b>1954</b>Bell Labs cria a 1ª célula de silício (~6%)</div>
+  <div class="fragment"><b>1958</b>Satélite Vanguard 1 usa células solares</div>
+  <div class="fragment"><b>2000s</b>Boom industrial e queda de preços</div>
+  <div class="fragment"><b>Hoje</b>Módulos acima de 20% de eficiência</div>
+ </div>
+</section>
+
+<!-- 10 ESTUDO DE CASO -->
+<section>
+ <div class="tag">Estudo de caso</div><h2>Usina Nova Olinda (PI)</h2>
+ <div class="row">
+  <div class="c">
+   <p class="g fragment"><i class="fa-solid fa-location-dot" style="color:var(--c)"></i> Ribeira do Piauí, Nordeste do Brasil: região de irradiação elevada.</p>
+   <p class="g fragment" style="margin-top:14px"><i class="fa-solid fa-bolt" style="color:var(--y)"></i> Um dos maiores parques solares do país, com capacidade na casa de ~290 MWp (dado aproximado).</p>
+   <p class="g fragment" style="margin-top:14px"><i class="fa-solid fa-lightbulb" style="color:var(--v)"></i> Lição: sol abundante + escala = energia limpa para centenas de milhares de residências.</p>
+  </div>
+  <div class="c fragment zoom-in" style="text-align:center"><i class="fa-solid fa-solar-panel fl" style="font-size:9em;color:var(--c)"></i></div>
+ </div>
+</section>
+
+<!-- 11 DESAFIOS -->
+<section>
+ <div class="tag">Desafios e gargalos</div><h2>Nem tudo são raios de sol</h2>
+ <div class="grid g3">
+  <div class="g fragment hov"><i class="ic fa-solid fa-cloud-moon"></i><h3>Intermitência</h3><p class="sm">Não gera à noite e cai com nuvens.</p></div>
+  <div class="g fragment hov"><i class="ic fa-solid fa-battery-half"></i><h3>Armazenamento</h3><p class="sm">Baterias ainda são caras.</p></div>
+  <div class="g fragment hov"><i class="ic fa-solid fa-temperature-high"></i><h3>Temperatura</h3><p class="sm">Calor excessivo reduz a tensão e a eficiência.</p></div>
+  <div class="g fragment hov"><i class="ic fa-solid fa-recycle"></i><h3>Reciclagem</h3><p class="sm">Descarte dos módulos após 25+ anos.</p></div>
+  <div class="g fragment hov"><i class="ic fa-solid fa-sack-dollar"></i><h3>Custo inicial</h3><p class="sm">Investimento alto, retorno em anos.</p></div>
+  <div class="g fragment hov"><i class="ic fa-solid fa-network-wired"></i><h3>Rede elétrica</h3><p class="sm">Precisa de integração e planejamento.</p></div>
+ </div>
+</section>
+
+<!-- 12 TENDÊNCIAS -->
+<section>
+ <div class="tag">Tendências de futuro</div><h2>O que vem por aí</h2>
+ <div class="row">
+  <div class="c">
+   <p class="g fragment"><i class="fa-solid fa-layer-group" style="color:var(--c)"></i> <b>Células tandem</b> (perovskita + silício) para superar o limite do silício.</p>
+   <p class="g fragment" style="margin-top:12px"><i class="fa-solid fa-arrows-up-down" style="color:var(--v)"></i> <b>Módulos bifaciais</b> captam luz nas duas faces.</p>
+   <p class="g fragment" style="margin-top:12px"><i class="fa-solid fa-seedling" style="color:var(--y)"></i> <b>Agrivoltaica</b>: painéis e plantações no mesmo terreno.</p>
+   <p class="g fragment" style="margin-top:12px"><i class="fa-solid fa-car-battery" style="color:var(--b)"></i> <b>Solar + baterias</b> e carros elétricos.</p>
+  </div>
+  <div class="c fragment fade-left" style="text-align:center"><div class="scene fl fl2"><div class="cube" style="animation-duration:20s"><span><i class="fa-solid fa-layer-group"></i></span><span><i class="fa-solid fa-sun"></i></span><span><i class="fa-solid fa-seedling"></i></span><span><i class="fa-solid fa-car-battery"></i></span><span><i class="fa-solid fa-bolt"></i></span><span><i class="fa-solid fa-atom"></i></span></div></div></div>
+ </div>
+</section>
+
+<!-- 13 DICAS -->
+<section>
+ <div class="tag">Dicas acionáveis</div><h2>O que você pode fazer</h2>
+ <div class="grid g2">
+  <div class="g fragment hov"><i class="ic fa-solid fa-receipt"></i><h3>Entenda sua conta</h3><p class="sm">Veja seu consumo em kWh na fatura.</p></div>
+  <div class="g fragment hov"><i class="ic fa-solid fa-compass"></i><h3>Avalie o telhado</h3><p class="sm">Orientação, sombra e área disponível.</p></div>
+  <div class="g fragment hov"><i class="ic fa-solid fa-lightbulb"></i><h3>Economize antes</h3><p class="sm">Eficiência energética reduz o tamanho do sistema.</p></div>
+  <div class="g fragment hov"><i class="ic fa-solid fa-user-check"></i><h3>Use profissionais</h3><p class="sm">Instalação segura e certificada.</p></div>
+ </div>
+</section>
+
+<!-- 14 RESUMO -->
+<section>
+ <div class="tag">Resumo executivo</div><h2>Para levar para casa</h2>
+ <div class="g">
+  <p class="fragment"><i class="fa-solid fa-circle-check" style="color:var(--c)"></i> Luz (fótons) → elétrons livres → corrente, pelo <b>efeito fotovoltaico</b>.</p>
+  <p class="fragment"><i class="fa-solid fa-circle-check" style="color:var(--c)"></i> Célula → módulo → sistema com inversor.</p>
+  <p class="fragment"><i class="fa-solid fa-circle-check" style="color:var(--c)"></i> Eficiência atual ~20%; pesquisa busca mais.</p>
+  <p class="fragment"><i class="fa-solid fa-circle-check" style="color:var(--c)"></i> Desafios: armazenamento, custo e reciclagem.</p>
+  <p class="fragment"><i class="fa-solid fa-circle-check" style="color:var(--c)"></i> O Brasil tem enorme potencial solar.</p>
+ </div>
+</section>
+
+<!-- 15 SIMULADOR -->
+<section>
+ <div class="tag">Hora de calcular</div><h2>Simulador: quanto gera?</h2>
+ <div class="row">
+  <div class="g c">
+   <p class="sm">Área dos painéis: <b id="va">20</b> m²</p><input type="range" id="a" min="2" max="100" value="20">
+   <p class="sm">Irradiância: <b id="vg">800</b> W/m²</p><input type="range" id="gg" min="100" max="1000" step="50" value="800">
+   <p class="sm">Eficiência: <b id="ve">20</b> %</p><input type="range" id="e" min="10" max="25" value="20">
+  </div>
+  <div class="g c" style="text-align:center"><p class="sm">Potência elétrica</p><div class="big grad"><span id="p">3,2</span> kW</div><p class="sm" style="margin-top:14px">Energia em 5 h de sol:<br><b id="en" style="color:var(--y);font-size:1.4em">16</b> kWh/dia</p><p class="xs">P = η · G · A</p></div>
+ </div>
+</section>
+
+<!-- 16 CTA -->
+<section style="text-align:center">
+ <div class="sun ring fl" style="width:100px;height:100px"></div>
+ <h2 style="text-align:center;font-size:2.2em;margin-top:30px">Seja a <span class="grad">geração solar</span></h2>
+ <p class="fragment sm">Calcule seu consumo · Converse em casa · Fale sobre energia limpa</p>
+ <div class="fragment" style="margin-top:20px"><span class="btn">Comece pela fatura de luz ⚡</span></div>
+</section>
+
+<!-- 17 Q&A -->
+<section style="text-align:center">
+ <div class="tag" style="text-align:center">Q&amp;A</div>
+ <h2 style="text-align:center;font-size:2.4em"><span class="grad">Perguntas?</span></h2>
+ <div class="grid g3" style="margin-top:20px">
+  <div class="g hov" onclick="this.querySelector('p').style.display='block'"><i class="ic fa-solid fa-moon"></i><h3>E à noite?</h3><p class="sm" style="display:none">Baterias ou a rede elétrica suprem a demanda.</p></div>
+  <div class="g hov" onclick="this.querySelector('p').style.display='block'"><i class="ic fa-solid fa-cloud"></i><h3>E dias nublados?</h3><p class="sm" style="display:none">Gera menos, mas ainda gera (luz difusa).</p></div>
+  <div class="g hov" onclick="this.querySelector('p').style.display='block'"><i class="ic fa-solid fa-hourglass-half"></i><h3>Quanto dura?</h3><p class="sm" style="display:none">Mais de 25 anos, com perda gradual.</p></div>
+ </div>
+ <p class="xs" style="margin-top:20px">Clique nos cards · Obrigado! Arthur, Ana Clara, Alex, Isabela e Laura · 3 reg. 1</p>
+</section>
+
+</div></div>
+<script>
+(function(){
+ const secs=[...document.querySelectorAll('.slides>section')];let ok=false,i=0;
+ try{
+  if(typeof Reveal==='undefined')throw 0;
+  Reveal.initialize({hash:false,history:false,width:1280,height:720,margin:.06,transition:'slide',controls:true,progress:true,center:true,touch:true,keyboard:true,slideNumber:'c/t'});
+  ok=true;
+ }catch(e){ok=false}
+ // Fallback: se o Reveal não iniciar, navega com JS puro (um slide por vez)
+ function show(n){i=Math.max(0,Math.min(secs.length-1,n));secs.forEach((s,k)=>{s.style.cssText=k===i?'display:block;position:relative;max-width:1100px;margin:0 auto;padding:40px 24px;font-size:22px;color:#e2e8f0':'display:none'});window.scrollTo(0,0)}
+ if(!ok){document.querySelector('.reveal').style.cssText='height:auto;overflow:auto';document.querySelector('.slides').style.cssText='position:static;transform:none;width:auto;height:auto';
+  secs.forEach(s=>s.querySelectorAll('.fragment').forEach(f=>{f.style.opacity=1;f.style.visibility='visible'}));show(0);
+  document.addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key))show(i+1);if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key))show(i-1)});}
+ // Botões próprios (funcionam no celular e no mouse)
+ const b=document.createElement('div');b.style.cssText='position:fixed;bottom:14px;right:14px;z-index:99;display:flex;gap:10px';
+ b.innerHTML='<span class="btn" id="pv">◀</span><span class="btn" id="nx">▶</span>';document.body.appendChild(b);
+ document.getElementById('nx').onclick=()=>ok?Reveal.next():show(i+1);
+ document.getElementById('pv').onclick=()=>ok?Reveal.prev():show(i-1);
+})();
+document.addEventListener('mousemove',e=>{const c=document.getElementById('cube');if(!c)return;const x=(e.clientX/innerWidth-.5)*40,y=(e.clientY/innerHeight-.5)*40;c.parentElement.style.transform=`rotateY(${x}deg) rotateX(${-y}deg)`});
+const $=id=>document.getElementById(id);
+function calc(){const a=+$('a').value,g=+$('gg').value,e=+$('e').value,p=g*a*e/100/1000;$('va').textContent=a;$('vg').textContent=g;$('ve').textContent=e;$('p').textContent=p.toFixed(1).replace('.',',');$('en').textContent=(p*5).toFixed(1).replace('.',',')}
+['a','gg','e'].forEach(i=>$(i).addEventListener('input',calc));calc();
+</script>
+</body>
+</html>
